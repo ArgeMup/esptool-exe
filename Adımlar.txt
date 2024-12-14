@@ -1,0 +1,54 @@
+python uygulamasını indir
+-https://www.python.org/downloads/
+-Add python.exe to PATH
+-Install Now (sadece geçerli kullanıcı için)
+-kurulumun son adımı "disable path length limit"
+
+cmd aç
+-python --version
+-pip --version	
+-pip install pyinstaller
+
+Git üzerinden release durumundaki son sürüm esptool projesini indir
+-https://github.com/espressif/esptool/tree/v4.8.1
+-c diski içine aç C:\esptool-4.8.1
+
+esptool.exe oluştur
+-cmd aç
+-cd C:\esptool-4.8.1
+-pyinstaller esptool.py
+-çıktı C:\esptool-4.8.1\dist
+
+Çıktı içine json dosyalarını kopyala
+-C:\esptool-4.8.1\esptool klasörünü
+-C:\esptool-4.8.1\dist\esptool\_internal
+-klasörü içine kopyala
+-Kopyalanan klasör içindeki *.json olmayan herşey silinebilir
+
+espefuse.exe oluştur
+-cmd aç
+-cd C:\esptool-4.8.1
+-pyinstaller espefuse.py
+
+Çıktı içine yaml dosyalarını kopyala
+-C:\esptool-4.8.1\espefuse klasörünü
+-C:\esptool-4.8.1\dist\espefuse\_internal
+-klasörü içine kopyala
+-Kopyalanan klasör içindeki *.yaml olmayan herşey silinebilir
+
+
+
+
+
+
+
+
+
+-------------Diğer - Şimdilik Gereksiz --------------------------
+
+espsecure.exe oluştur
+-cmd aç
+-cd C:\esptool-4.8.1
+-pyinstaller espsecure.py
+
+??? --onefile yapınca jsonlar dahil edilmiyor ve yavaş
